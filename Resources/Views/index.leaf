@@ -7,7 +7,7 @@
   <body>
     <p>#(title)</p>
     #for(i in a):
-      <p>#comma(i)</p>
+      <p>#(i)</p>
     #endfor
   </body>
 </html>

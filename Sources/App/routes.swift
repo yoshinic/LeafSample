@@ -1,12 +1,12 @@
 import Vapor
 
 func routes(_ app: Application) throws {
-    app.get { req in
-        return req.view.render("index", SampleContext())
+    app.get { req -> EventLoopFuture<View> in
+        return req.view.render("index", StringContext())
     }
 }
 
-struct SampleContext: Encodable {
+struct StringContext: Encodable {
     let title: String = "Leaf Sample"
-    let a: [Int] = [1, 200, 3000, 400000]
+    let a: [String] = [1, 200, 3000, 400000].map { String.localizedStringWithFormat("%d", $0) }
 }
