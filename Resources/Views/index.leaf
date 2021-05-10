@@ -1,12 +1,21 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-
-  <title>#(title)</title>
-</head>
-
-<body>
-  <h1>#(title)</h1>
-</body>
+  <head>
+    <meta charset="utf-8">
+    <title>#(title)</title>
+  </head>
+  <body>
+    <p>#(title)</p>
+    #for(i in a):
+      <p>
+        #if(i == 1):
+          #(i) 
+        #elseif(2 <= i && i < 4):
+          #((i + 1) * i)
+        #else:
+          A
+        #endif 
+      </p>
+    #endfor
+  </body>
 </html>

@@ -2,12 +2,11 @@ import Vapor
 
 func routes(_ app: Application) throws {
     app.get { req in
-        return req.view.render("index", ["title": "Hello Vapor!"])
-    }app.get { req in
-        return "It works!"
+        return req.view.render("index", SampleContext())
     }
+}
 
-    app.get("hello") { req -> String in
-        return "Hello, world!"
-    }
+struct SampleContext: Encodable {
+    let title: String = "Leaf Sample"
+    let a: [Int] = [1, 2, 3, 4]
 }
