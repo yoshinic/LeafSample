@@ -6,8 +6,23 @@
   </head>
   <body>
     <p>#(title)</p>
-    #for(i in a):
-      <p>#(i)</p>
-    #endfor
+
+    <table>
+      <thead>
+        <tr>
+          <th>番号</th>
+          <th>名前</th>
+        </tr>
+      </thead>
+      <tbody>
+        #for(name in a):
+          <tr>
+            <td>#index(a, name)</td>
+            <td>#(name)</td>
+          </tr>
+        #endfor
+      </tbody>
+    </table>
+
   </body>
 </html>
