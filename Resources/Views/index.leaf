@@ -6,6 +6,7 @@
   </head>
   <body>
     <p>#(title)</p>
+    <p>配列の内容を出力します。個数：#count(a)個</p>
     #for(i in a):
       <p>
         #if(i == 1):
