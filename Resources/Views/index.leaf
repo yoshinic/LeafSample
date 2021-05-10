@@ -6,8 +6,41 @@
   </head>
   <body>
     <p>#(title)</p>
-    #for(i in a):
-      <p>#(i)</p>
-    #endfor
+
+    <!-- どちらもエラー -->
+    <table>
+      <thead>
+        <tr>
+          <th>番号</th>
+          <th>名前</th>
+        </tr>
+      </thead>
+      <tbody>
+        #(a.enumerated().forEach):
+          <tr>
+            <td>#($0.offset)</td>
+            <td>#($0.element)</td>
+          </tr>
+        #endforEach
+      </tbody>
+    </table>
+
+    <table>
+      <thead>
+        <tr>
+          <th>番号</th>
+          <th>名前</th>
+        </tr>
+      </thead>
+      <tbody>
+        #(0..<count(a)):
+          <tr>
+            <td>#($0)</td>
+            <td>#(a[$0])</td>
+          </tr>
+        #end
+      </tbody>
+    </table>
+
   </body>
 </html>
